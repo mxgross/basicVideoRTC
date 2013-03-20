@@ -12,8 +12,8 @@ var localstream;
 var isCaller = false;
 
 var mediaConstraints = {'mandatory': {
-                          'OfferToReceiveAudio':true, 
-                          'OfferToReceiveVideo':true }};
+        'OfferToReceiveAudio': true,
+        'OfferToReceiveVideo': true}};
 var isVideoMuted = false;
 var isAudioMuted = false;
 
@@ -25,7 +25,7 @@ function log(text) {
 }
 
 function call(isCaller) {
-    pc = new webkitRTCPeerConnection({"iceServers":[{"url":"stun:stun.l.google.com:19302"}]}, mediaConstraints);
+    pc = new webkitRTCPeerConnection({"iceServers": [{"url": "stun:stun.l.google.com:19302"}]}, mediaConstraints);
 
     // send any ice candidates to the other peer
     pc.onicecandidate = iceCallback;
@@ -52,13 +52,12 @@ function call(isCaller) {
             log("createOffer");
         }
         else {
-            pc.createAnswer(gotDescription);
+            pc.createAnswer(pc.remoteDescription,gotDescription);
             log("createAnswer");
         }
 
         function gotDescription(desc) {
             pc.setLocalDescription(desc);
-            //signalingChannel.send(JSON.stringify({ "sdp": desc }));
         }
     });
 }
@@ -67,11 +66,4 @@ function hangup() {
     log("Ending call");
     pc.close();
     pc = null;
-}
-
-function iceCallback(event) {
-    if (event.candidate) {
-        pc.addIceCandidate(new RTCIceCandidate(event.candidate));
-        log("Local ICE candidate: \n" + event.candidate.candidate);
-    }
 }

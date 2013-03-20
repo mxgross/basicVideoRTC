@@ -50,7 +50,7 @@
 
             <div style="clear: both"></div>
 
-            <button onClick="call(true)">Call</button> <button onClick="hangup()">Hangup</button>
+            <button onClick="call(true)">Call</button> <button onClick="hangup()">Hang up</button>
         </div>
 
         <script type="text/javascript" src="js/rtc.js"></script>
