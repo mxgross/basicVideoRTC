@@ -1,0 +1,44 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <style>
+            video {
+                max-width: 200px;
+                border: 1px solid orangered;
+            }
+            textarea {
+               height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="divGroup">
+            <h3>Video</h3>
+            <p>Not working yet</p>
+            <video id="localVideo" autoplay></video>
+            <video id="remoteVideo" autoplay></video>
+        </div>
+
+        <div class="divGroup">
+            <button onclick="start();">Start</button>
+            <button onclick="connect();">Connect</button>
+        </div>
+
+        <div class="divGroup">
+            <h3>Chat</h3>
+            <textarea id="output"></textarea>
+            <input id="input" /><button onclick="sendMsg(document.getElementById('input').value);">Send</button>
+        </div>
+
+        <script src="http://192.168.100.74:8080/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
