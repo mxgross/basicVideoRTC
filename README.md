@@ -1,8 +1,5 @@
 basicVideoRTC
 =============
 
-Trying to build a realy basic WebRTC Videochat
-
-Testing socket.io connection with a easy text chat.
-
-Remote video stream not running yet.
+This example is only recommended to Chrome.
+Tested with Version 26.0.1410.40 beta-m
