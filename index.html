@@ -1,44 +1,53 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>WebRTC Demo</title>  
 
         <style>
-            video {
-                max-width: 200px;
-                border: 1px solid orangered;
+            h1 {
+                font-family: verdana;
+                font-size: 20px;
             }
-            textarea {
-               height: 50px;
+            .videoWrap span{
+                position: absolute;
+                padding: 3px;
+                background-color: rgba(255, 255, 255, 0.6);
+                color: black;
+                font-family: verdana;
+                font-size: 12px;
+                top: 1px;
+                left: 1px;
+            }
+
+            .videoWrap {
+                position: relative;
+                float: left;
             }
         </style>
     </head>
+
     <body>
 
-        <div class="divGroup">
-            <h3>Video</h3>
-            <p>Not working yet</p>
-            <video id="localVideo" autoplay></video>
-            <video id="remoteVideo" autoplay></video>
+        <h1>WebRTC with Socket.IO</h1>
+
+        <div class="videoWrap">
+            <span>Local</span>
+            <video id="webrtc-sourcevid" autoplay style="width: 320px; height: 240px; border: 1px solid black;"></video>
         </div>
 
-        <div class="divGroup">
-            <button onclick="start();">Start</button>
-            <button onclick="connect();">Connect</button>
+        <div class="videoWrap">
+            <span>Remote</span>
+            <video id="webrtc-remotevid" autoplay style="width: 320px; height: 240px; border: 1px solid black;"></video>
         </div>
 
-        <div class="divGroup">
-            <h3>Chat</h3>
-            <textarea id="output"></textarea>
-            <input id="input" /><button onclick="sendMsg(document.getElementById('input').value);">Send</button>
-        </div>
+        <div style="clear:both;"></div>
 
-        <script src="http://192.168.100.74:8080/socket.io/socket.io.js"></script>
-        <script type="text/javascript" src="script.js"></script>
+        <button type="button" onclick="startVideo();">Start</button>
+        <button type="button" onclick="stopVideo();">Stop</button>
+        <button type="button" onclick="connect();">Connect</button>
+        <button type="button" onclick="hangUp();">Hang Up</button>
+
+        <script src="http://192.168.100.70:8080/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="rtc.js"></script>
     </body>
 </html>
