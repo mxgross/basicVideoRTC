@@ -10,3 +10,13 @@ Tested with Version 26.0.1410.40 beta-m
 I put a <b>flowchart</b> into "HelpfulStuff" folder. Simplified, not pretty  but it may be helpful.
 
 I´m also new with this WebRTC stuff ;)
+
+
+Thanks to:
+<ul>
+<li><a href="http://html5videoguide.net/presentations/LCA_2013_webrtc/#page1">http://html5videoguide.net/presentations/LCA_2013_webrtc/#page1</a>
+</li>
+
+<li><a href="https://github.com/tomasbasham/SocialVidRTC/blob/master/javascript/main.js">SocialVidRTC</a>
+</li>
+</ul>
