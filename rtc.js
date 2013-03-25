@@ -1,8 +1,8 @@
 // create socket
 var socket = io.connect('http://' + window.location.host + ':8080/');
 
-var sourcevid = document.getElementById('webrtc-sourcevid');
-var remotevid = document.getElementById('webrtc-remotevid');
+var sourcevid = document.getElementById('sourcevideo');
+var remotevid = document.getElementById('remotevideo');
 var localStream = null;
 var peerConn = null;
 var started = false;
@@ -12,7 +12,7 @@ var mediaConstraints = {'mandatory': {
         'OfferToReceiveVideo': true}};
 var isVideoMuted = false;
 
-// get the local video up
+// show the local video
 function startVideo() {
 
     navigator.webkitGetUserMedia({video: true, audio: true}, successCallback, errorCallback);
@@ -77,8 +77,8 @@ function stop() {
 }
 
 // socket: channel connected
-socket.on('connect', onChannelOpened)
-        .on('message', onMessage);
+socket.on('connect', onChannelOpened);
+socket.on('message', onMessage);
 
 function onChannelOpened(evt) {
     console.log('Channel opened.');
