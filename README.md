@@ -19,4 +19,8 @@ Thanks to:
 
 <li><a href="https://github.com/tomasbasham/SocialVidRTC/blob/master/javascript/main.js">SocialVidRTC</a>
 </li>
+
+<li><a href="http://de.slideshare.net/nundefined/getting-started-with-webrtc">http://de.slideshare.net/nundefined/getting-started-with-webrtc</a>
+</li>
+
 </ul>
